@@ -1,4 +1,4 @@
-package com.dubbo.test;
+package com.dubbo.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.dubbo.api.user.service.IUserServer;
