@@ -1,7 +1,6 @@
-package com.dubbo.vo.request;
+package com.dubbo.vo.response;
 
 import com.dubbo.validation.Insert;
-import com.dubbo.validation.Update;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,22 +15,17 @@ import java.io.Serializable;
  * @version 1.0.0
  * @date 2020-07-16 11:05
  */
-@ApiModel(description = "请求数据", value = "请求类")
-public class UserReqVO implements Serializable {
+@ApiModel(description = "响应数据", value = "响应类")
+public class UserRespVO implements Serializable {
 
-    @NotNull(message = "姓名不可以为空",groups = Update.class)
     @ApiModelProperty(value = "主鍵",required = true)
     private int id;
-    @NotNull(message = "姓名不可以为空",groups ={Insert.class,Update.class} )
     @ApiModelProperty(value = "姓名",required = true)
     private String name;
-    @NotNull(message = "密码不可以为空",groups ={Insert.class,Update.class})
     @ApiModelProperty(value = "密码",required = true)
     private String passwd;
-    @NotNull(message = "性别不可以为空",groups ={Insert.class,Update.class})
     @ApiModelProperty(value = "性别",required = true)
     private String sex;
-    @NotNull(message = "证件号不可以为空",groups ={Insert.class,Update.class})
     @ApiModelProperty(value = "证件号",required = true)
     private String cardId;
     @ApiModelProperty(value = "年龄")

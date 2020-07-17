@@ -13,6 +13,9 @@ import java.io.Serializable;
 public class UserRequest implements Serializable {
 
     private static final long serialVersionUID = 4722382360366631425L;
+
+    private int id;
+
     private String name;
 
     private String passwd;
@@ -24,6 +27,14 @@ public class UserRequest implements Serializable {
     private String age;
 
     private String email;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

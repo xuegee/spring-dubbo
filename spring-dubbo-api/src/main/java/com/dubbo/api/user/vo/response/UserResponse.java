@@ -12,26 +12,44 @@ import java.io.Serializable;
  */
 public class UserResponse implements Serializable {
 
-    private String userName;
+    private static final long serialVersionUID = -1808667794191529464L;
 
-    private String password;
+    private int id;
+
+    private String name;
+
+    private String passwd;
 
     private String sex;
 
-    public String getUserName() {
-        return userName;
+    private String cardId;
+
+    private String age;
+
+    private String email;
+
+    public int getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 
     public String getSex() {
@@ -40,5 +58,29 @@ public class UserResponse implements Serializable {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

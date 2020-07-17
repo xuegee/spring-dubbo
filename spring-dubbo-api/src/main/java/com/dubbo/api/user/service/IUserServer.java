@@ -14,8 +14,33 @@ import com.dubbo.api.user.vo.response.UserResponse;
 
 public interface IUserServer {
 
-    public void addUser(UserRequest user);
+    /**
+     * @methodName registerUser
+     * @param
+     * @describe 用户注册
+     * @author XUELIANZENG
+     * @date 2020/7/17 10:02
+     * @return
+     */
+    public void registerUser(UserRequest user);
+    /**
+     * @methodName editUser
+     * @param
+     * @describe 用户修改
+     * @author XUELIANZENG
+     * @date 2020/7/17 10:02
+     * @return
+     */
+    public void editUser(UserRequest user);
 
+    /**
+     * @methodName queryUser
+     * @param
+     * @describe 查询用户
+     * @author XUELIANZENG
+     * @date 2020/7/17 10:02
+     * @return
+     */
     public UserResponse queryUser(UserRequest userRequest);
 
 }

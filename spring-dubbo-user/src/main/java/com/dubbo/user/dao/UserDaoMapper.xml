@@ -10,7 +10,77 @@
         <result property="age" column="age" jdbcType="VARCHAR"/>
         <result property="email" column="email" jdbcType="VARCHAR"/>
     </resultMap>
+
+    <sql id="selectcolumns">
+        id,name,passwd,sex,card_id,age,email
+    </sql>
+
+    <sql id="tableName">
+        tb_c_user
+    </sql>
+
+    <sql id="where_clause">
+        where 1=1
+        <trim suffixOverrides=",">
+            <if test="id != null and id !=''">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="passwd != null  and passwd != ''">
+                and passwd = #{passwd}
+            </if>
+            <if test="sex != null  and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="cardId != null and cardId != ''">
+                and card_Id = #{cardId}
+            </if>
+            <if test="age != null and age != ''">
+                and age = #{age}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+            <if test="sorting != null">
+                order by #{sorting}
+            </if>
+            <if test="sort!= null and sort != ''">
+                order by ${sort} ${order}
+            </if>
+        </trim>
+    </sql>
+
     <insert id="registerUser" parameterType="hashmap">
-        insert into tb_c_user (name,passwd,sex,card_id,age,email) value (#{dto.name},#{dto.passwd},#{dto.sex},#{dto.cardId},#{dto.age},#{dto.email})
+        insert into tb_c_user (name,passwd,sex,card_id,age,email) value (#{name},#{passwd},#{sex},#{cardId},#{age},#{email})
     </insert>
+
+    <update id="editUser" parameterType="hashmap">
+        update tb_c_user t set
+        <if test="name != null and name != ''">
+             name = #{name}
+        </if>
+        <if test="passwd != null  and passwd != ''">
+             ,passwd = #{passwd}
+        </if>
+        <if test="sex != null  and sex != ''">
+             ,sex = #{sex}
+        </if>
+        <if test="cardId != null and cardId != ''">
+             ,card_Id = #{cardId}
+        </if>
+        <if test="age != null and age != ''">
+             ,age = #{age}
+        </if>
+        <if test="email != null and email != ''">
+             ,email = #{email}
+        </if>
+        where id = #{id}
+    </update>
+
+    <select id="queryUser" parameterType="hashmap" resultMap="UserDTO">
+      select <include refid="selectcolumns"/> from <include refid="tableName"/> <include refid="where_clause"/>
+    </select>
+
 </mapper>
