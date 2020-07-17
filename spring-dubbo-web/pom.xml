@@ -52,6 +52,12 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.8.2</version>
         </dependency>
+
+        <!--apollo-->
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
